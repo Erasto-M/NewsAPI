@@ -5,7 +5,7 @@ import 'package:newsapp/models/articles.dart';
 import 'package:newsapp/models/categorydata.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:newsapp/views/Category_Model.dart';
-import 'package:newsapp/views/article_Model.dart';
+import 'package:newsapp/views/WebviewModel.dart';
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 

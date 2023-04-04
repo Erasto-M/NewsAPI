@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:newsapp/helper/news.dart';
 import '../models/articles.dart';
 //import 'Home.dart';
-import 'article_Model.dart';
+import 'WebviewModel.dart';
  class CategoryNews extends StatefulWidget {
    String category;
    CategoryNews({ required this.category});
