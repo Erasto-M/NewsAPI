@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:newsapp/helper/data.dart';
 import 'package:newsapp/helper/news.dart';
-import 'package:newsapp/models/articleModel.dart';
+import 'package:newsapp/models/articles.dart';
 import 'package:newsapp/models/categorydata.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:newsapp/views/Category_Model.dart';
 import 'package:newsapp/views/article_Model.dart';
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -39,7 +40,7 @@ class _HomeState extends State<Home> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
-            Text("Flutter", style: TextStyle(color: Colors.black,
+            Text("India", style: TextStyle(color: Colors.black,
                 fontSize: 25, fontWeight: FontWeight.bold),),
             Text("News",style: TextStyle(color: Colors.blue,
                 fontSize: 25, fontWeight: FontWeight.bold))
@@ -54,6 +55,11 @@ class _HomeState extends State<Home> {
       :
       SingleChildScrollView(
         child: Container(
+          margin:const  EdgeInsets.only(
+            top: 10,
+            right: 10,
+            left: 10,
+          ),
           child: Column(
             children: [
               /// Categories
@@ -95,14 +101,16 @@ class _HomeState extends State<Home> {
   }
 }
 class MyImages extends StatelessWidget {
-  final Imageurl, CategoryName;
-  MyImages({ this.Imageurl, this.CategoryName});
+  final String Imageurl, CategoryName;
+  MyImages({ required this.Imageurl, required this.CategoryName});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-
+        Navigator.of(context).push(MaterialPageRoute(builder: (context)=>CategoryNews(
+          category: CategoryName.toLowerCase(),
+        )));
       },
       child: Container(
         margin: const EdgeInsets.only(right: 16),
