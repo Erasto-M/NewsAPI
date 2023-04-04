@@ -44,6 +44,7 @@ class _ArticleViewState extends State<ArticleView> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: WebView(
+          javascriptMode: JavaScriptMode.unrestricted,
           initialUrl:  widget.postUrl,
           onWebViewCreated: (WebViewController webViewController){
             _controller.complete(webViewController);
@@ -54,5 +55,5 @@ class _ArticleViewState extends State<ArticleView> {
   }
 }
 
-WebView({required String initialUrl, required Null Function(WebViewController webViewController) onWebViewCreated}) {
+WebView({required String initialUrl, required Function(WebViewController webViewController) onWebViewCreated, required JavaScriptMode javascriptMode}) {
 }
